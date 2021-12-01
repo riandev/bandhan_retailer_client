@@ -22,16 +22,16 @@ const DownloadReport = () => {
     );
   };
   const handleReport = () => {
-    fetch(`http://localhost:6011/getBRReport/${reportDate}`)
+    fetch(`http://67.21.32.75:6011/getBRReport/${reportDate}`)
       .then((res) => res.json())
       .then((data) => setBRReport(data));
-    fetch(`http://localhost:6011/getTerritoryReport/${reportDate}`)
+    fetch(`http://67.21.32.75:6011/getTerritoryReport/${reportDate}`)
       .then((res) => res.json())
       .then((data) => setTerritoyReport(data));
-    fetch(`http://localhost:6011/getAreaReport/${reportDate}`)
+    fetch(`http://67.21.32.75:6011/getAreaReport/${reportDate}`)
       .then((res) => res.json())
       .then((data) => setAreaReport(data));
-    fetch(`http://localhost:6011/getRegionReport/${reportDate}`)
+    fetch(`http://67.21.32.75:6011/getRegionReport/${reportDate}`)
       .then((res) => res.json())
       .then((data) => setRegionReport(data));
   };

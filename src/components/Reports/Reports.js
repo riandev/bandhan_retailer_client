@@ -7,21 +7,21 @@ const Reports = () => {
   const [dates, setDates] = useState([]);
   const [downloaded, setDownloaded] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:6011/reports")
+    fetch("http://67.21.32.75:6011/reports")
       .then((res) => res.json())
       .then((data) => {
         setReport(data);
       });
   }, []);
   useEffect(() => {
-    fetch("http://localhost:6011/reportDates")
+    fetch("http://67.21.32.75:6011/reportDates")
       .then((res) => res.json())
       .then((data) => setDates(data));
   }, []);
 
   function handlePrepare(pdate) {
     console.log(pdate);
-    fetch("http://localhost:6011/prepareByDate?date=" + pdate)
+    fetch("http://67.21.32.75:6011/prepareByDate?date=" + pdate)
       .then((res) => res.json())
       .then((data) => setDownloaded(data));
   }
