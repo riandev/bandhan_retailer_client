@@ -6,6 +6,7 @@ import UploadLead from "../UploadLead/UploadLead";
 import DeleteLeads from "./../DeleteLeads/DeleteLeads";
 import BrReport from "./../BrReport/BrReport";
 import DownloadReport from "./../DownloadReport/DownloadReport";
+import ActiveStatus from "../ActiveStatus/ActiveStatus";
 
 const routesadmin = [
   {
@@ -43,19 +44,26 @@ const routesadmin = [
     toolbar: () => <p className="text-white">Delete All Lead</p>,
     main: () => <LeadGenerate />,
   },
+  // {
+  //   path: "/admin/generateReport",
+  //   exact: true,
+  //   name: "Generate Reports",
+  //   toolbar: () => <p className="text-white">Generate Reports</p>,
+  //   main: () => <BrReport />,
+  // },
+  // {
+  //   path: "/admin/downloadReport",
+  //   exact: true,
+  //   name: "Download Reports",
+  //   toolbar: () => <p className="text-white">Download Reports</p>,
+  //   main: () => <DownloadReport />,
+  // },
   {
-    path: "/admin/generateReport",
+    path: "/admin/setstatus",
     exact: true,
-    name: "Generate Reports",
-    toolbar: () => <p className="text-white">Generate Reports</p>,
-    main: () => <BrReport />,
-  },
-  {
-    path: "/admin/downloadReport",
-    exact: true,
-    name: "Download Reports",
-    toolbar: () => <p className="text-white">Download Reports</p>,
-    main: () => <DownloadReport />,
+    name: "Active Week",
+    toolbar: () => <p className="text-white">Active Week</p>,
+    main: () => <ActiveStatus />,
   },
 ];
 

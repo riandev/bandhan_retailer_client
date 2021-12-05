@@ -32,7 +32,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import { Avatar } from "@material-ui/core";
-import { userContext } from "./App";
+import { consumerContext, userContext } from "./App";
 
 const drawerWidth = 240;
 
@@ -123,7 +123,7 @@ const ResponsiveDrawer = (props) => {
   const handleReload = () => {
     window.location.reload(true);
   };
-
+  const [consumer, setConsumer] = useContext(consumerContext);
   const drawer = (
     <div>
       <div className={classes.toolbar} />
@@ -179,6 +179,9 @@ const ResponsiveDrawer = (props) => {
                 ))}
               </Typography>
             </div>
+            <h5 style={{ color: "white", fontWeight: "bold" }}>
+              {consumer?.week_name}
+            </h5>
             <div>
               <p>Agent ID: {sessionStorage.getItem("agent")}</p>
             </div>
