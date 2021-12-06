@@ -60,7 +60,7 @@ const ActiveStatus = () => {
           </Button>
         </Card>
         <div className="mt-3">
-          <h4>Active Week: {status.activeWeek}</h4>
+          <h4>Active Week: {status?.activeWeek}</h4>
         </div>
       </div>
     </div>
