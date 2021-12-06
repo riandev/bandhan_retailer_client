@@ -594,8 +594,8 @@ const SurveyBody = () => {
       <div
         style={{
           display:
-            (newRetailerName_w2 !== null || q3_w2 === "yes") &&
-            consumer?.week_name === "week_2"
+            (newRetailerName_w1 !== null || q3_w1 === "yes") &&
+            consumer?.week_name === "week_1"
               ? "block"
               : "none",
         }}
