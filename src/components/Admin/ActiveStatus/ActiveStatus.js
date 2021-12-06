@@ -13,12 +13,12 @@ const ActiveStatus = () => {
   const [activeWeek, setActiveWeek] = useState("");
   const [status, setStatus] = useState({});
   useEffect(() => {
-    fetch("http://67.21.32.75:6011/getStatus")
+    fetch("http://192.168.10.14:6011/getStatus")
       .then((res) => res.json())
       .then((data) => setStatus(data[0]));
   }, []);
   const handleStatus = () => {
-    fetch("http://67.21.32.75:6011/setstatus", {
+    fetch("http://192.168.10.14:6011/setstatus", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ activeWeek: activeWeek }),

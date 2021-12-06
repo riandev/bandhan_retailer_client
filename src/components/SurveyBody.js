@@ -45,13 +45,13 @@ const SurveyBody = () => {
     setSearchNumber(e.target.value);
   };
   useEffect(() => {
-    fetch("http://67.21.32.75:6011/getStatus")
+    fetch("http://192.168.10.14:6011/getStatus")
       .then((res) => res.json())
       .then((data) => setStatus(data[0]?.activeWeek));
   }, []);
   const handleSearch = () => {
     fetch(
-      `http://67.21.32.75:6011/dMatched?Consumer_No=${searchNumber}&status=${status}`
+      `http://192.168.10.14:6011/dMatched?Consumer_No=${searchNumber}&status=${status}`
     )
       .then((res) => res.json())
       .then((data) => setConsumer(data));
@@ -174,7 +174,7 @@ const SurveyBody = () => {
       callDate: new Date().toLocaleDateString(),
       callTime: new Date().toLocaleTimeString(),
     };
-    fetch(`http://67.21.32.75:6011/answers/${consumer?._id}`, {
+    fetch(`http://192.168.10.14:6011/answers/${consumer?._id}`, {
       method: "PATCH",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(answer),
@@ -517,7 +517,7 @@ const SurveyBody = () => {
         ব্যাক্তিগত তথ্য ভবিষ্যতে পর্যালোচনা এর কাজে ব্যবহার করা হতে পারে।
       </p>
       <div
-        style={{ display: q2_w2 === "yes" ? "block" : "none" }}
+        style={{ display: q2_w4 === "yes" ? "block" : "none" }}
         className="mt-2"
       >
         <h6>
@@ -593,11 +593,7 @@ const SurveyBody = () => {
       </div>
       <div
         style={{
-          display:
-            (newRetailerName_w1 !== null || q3_w1 === "yes") &&
-            consumer?.week_name === "week_1"
-              ? "block"
-              : "none",
+          display: q4dot1 === "yes" || q4dot1 === "no" ? "block" : "none",
         }}
         className="mt-2"
       >
@@ -723,8 +719,6 @@ const SurveyBody = () => {
             q2_w2 === "busy" ||
             q2_w3 === "busy" ||
             q2_w4 === "busy" ||
-            q4dot1 === "no" ||
-            q4dot1 === "yes" ||
             q5dot1 === "no" ||
             q5dot1 === "yes" ||
             q6dot1 === "no" ||
