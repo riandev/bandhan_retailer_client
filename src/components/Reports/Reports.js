@@ -31,27 +31,22 @@ const Reports = () => {
   }
 
   let headers = [
-    { label: "id", key: "id" },
+    { label: "Id", key: "Id" },
     { label: "diid", key: "diid" },
-    { label: "Mail", key: "Mail" },
-    { label: "Data_Status", key: "Data_Status" },
-    { label: "Operator_name", key: "Operator_name" },
+    { label: "week_name", key: "week_name" },
     { label: "data_date", key: "data_date" },
-    { label: "Months", key: "Months" },
-    { label: "SL", key: "SL" },
-    { label: "Page_no", key: "Page_no" },
-    { label: "Rute_Name", key: "Rute_Name" },
-    { label: "ba_id", key: "ba_id" },
-    { label: "r_name", key: "r_name" },
-    { label: "Consumer_No", key: "Consumer_No" },
-    { label: "age", key: "age" },
-    { label: "profession", key: "profession" },
-    { label: "date_recorded", key: "date_recorded" },
+    { label: "Region", key: "Region" },
+    { label: "Area", key: "Area" },
+    { label: "Territory", key: "Territory" },
+    { label: "Sales Point", key: "Sales Point" },
     { label: "outlet_id", key: "outlet_id" },
     { label: "outlet_name", key: "outlet_name" },
-    { label: "Presented_Address", key: "Presented_Address" },
-    { label: "Which_brand_do_you_smoke", key: "Which_brand_do_you_smoke" },
-    { label: "Territory", key: "Territory" },
+    { label: "Retailer_Name", key: "Retailer_Name" },
+    { label: "Consumer_No", key: "Consumer_No" },
+    { label: "outlet_address", key: "outlet_address" },
+    { label: "TMS name", key: "TMS name" },
+    { label: "TMS Email", key: "TMS Email" },
+    { label: "TMS number", key: "TMS number" },
     { label: "for_d", key: "for_d" },
     { label: "agentID", key: "agentID" },
     { label: "qcBy", key: "qcChecked" },
@@ -60,14 +55,23 @@ const Reports = () => {
     { label: "rating", key: "rating" },
     { label: "callDate", key: "callDate" },
     { label: "callTime", key: "callTime" },
-    { label: "q1", key: "answer1" },
-    { label: "q2", key: "answer2" },
-    { label: "q3", key: "answer3" },
-    { label: "q4", key: "answer4" },
-    { label: "q5", key: "answer5" },
-    { label: "q6", key: "answer6" },
-    { label: "q7", key: "answer7" },
-    { label: "q8", key: "answer8" },
+    { label: "answer1_w1", key: "answer1_w1" },
+    { label: "answer2_w1", key: "answer2_w1" },
+    { label: "answer3_w1", key: "answer3_w1" },
+    { label: "answer4", key: "answer4" },
+    { label: "answer4dot1", key: "answer4dot1" },
+    { label: "answer5", key: "answer5" },
+    { label: "answer5dot1", key: "answer5dot1" },
+    { label: "answer1_w3", key: "answer1_w3" },
+    { label: "answer2_w3", key: "answer2_w3" },
+    { label: "answer3_w3", key: "answer3_w3" },
+    { label: "answer6", key: "answer6" },
+    { label: "answer6dot1", key: "answer6dot1" },
+    { label: "answer1_w4", key: "answer1_w4" },
+    { label: "answer2_w4", key: "answer2_w4" },
+    { label: "answer3_w4", key: "answer3_w4" },
+    { label: "answer7", key: "answer7" },
+    { label: "answer7dot1", key: "answer7dot1" },
   ];
   return (
     <div className="mt-5">
@@ -104,7 +108,7 @@ const Reports = () => {
                     <CSVLink
                       headers={headers}
                       title="Export data to CSV"
-                      filename={`JTI_Trade_Program_${date?.date}.csv`}
+                      filename={`bandhan_retailer_${date?.date}.csv`}
                       data={downloaded}
                     >
                       `Download_${date?.date}`
@@ -124,7 +128,7 @@ const Reports = () => {
           <CSVLink
             headers={headers}
             title="Export data to CSV"
-            filename={"JTI_Trade_Program.csv"}
+            filename={"bandhan_retailer.csv"}
             data={report}
           >
             Download
