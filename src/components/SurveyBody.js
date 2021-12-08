@@ -199,7 +199,7 @@ const SurveyBody = () => {
         </button>
       </div>
       {/* Week 1 */}
-      <div
+      {/* <div
         style={{
           display:
             consumer !== null && consumer?.week_name === "week_1"
@@ -221,16 +221,19 @@ const SurveyBody = () => {
             <option value="no">না</option>
           </Form.Control>
         </Form.Group>
-      </div>
+      </div> */}
       <div
         style={{
-          display: q1_w1 === "yes" || q1_w1 === "no" ? "block" : "none",
+          display:
+            consumer !== null && consumer?.week_name === "week_1"
+              ? "block"
+              : "none",
         }}
         className="mt-2"
       >
         <h6>
-          ২. আমি একটি রিসার্চ কোম্পানি থেকে ফোন করেছি । আমি কি আপনার সাথে একটু
-          কথা বলতে পারি?
+          ১.আসসালামুআলাইকুম, আমি একটি রিসার্চ কোম্পানি থেকে ফোন করেছি । আমি কি
+          আপনার সাথে একটু কথা বলতে পারি?
         </h6>
         <p className="text-secondary">
           (যদি উত্তর হ্যাঁ আসে তবে কথা বলা চালিয়ে যাবেন, নতুনবা কথা শেষ করে
@@ -257,7 +260,7 @@ const SurveyBody = () => {
         className="mt-2"
       >
         <h6>
-          ৩. স্যার, আপনার দোকানের নাম কী<b> {consumer?.outlet_name} ?</b>
+          ২. স্যার, আপনার দোকানের নাম কী<b> {consumer?.outlet_name} ?</b>
         </h6>
         <p className="text-secondary">
           (যদি উত্তর হ্যাঁ আসে তবে কথা বলা চালিয়ে যাবেন, নতুবা সঠিক দোকানের নাম
